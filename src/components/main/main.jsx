@@ -5,13 +5,15 @@ export default class MainComponent extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+
+        }
     }
 
     render() {
         document.title='Home';
         return(
-            <div id="main">Hello</div>
+            <div id="main">{ this.props.message }</div>
         );
     }
 
