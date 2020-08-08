@@ -9,6 +9,7 @@ export default class MainComponent extends Component {
     }
 
     render() {
+        document.title='Home';
         return(
             <div id="main">Hello</div>
         );

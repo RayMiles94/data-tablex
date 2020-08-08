@@ -9,6 +9,7 @@ export default class Features extends Component {
     }
 
     render() {
+        document.title='Features';
         return(
             <div>Features</div>
         );
