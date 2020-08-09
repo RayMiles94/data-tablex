@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import './features.css';
+import _ from 'underscore';
 
 export default class Features extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            name:'Features'
+            name: 'Features'
         };
     }
 
@@ -14,22 +15,26 @@ export default class Features extends Component {
         document.title = this.state.name;
         return (
             <div className="container">
-                <div style={{ alignContent:'center' }}>{this.state.name}</div>
+                <h1 style={{ alignContent: 'center', color: 'green' }}>{this.state.name}</h1>
                 <table className="table table-sm">
-                    <tr style={{ backgroundColor:'lightblue' }}>
-                        <td>id</td>
-                        <td>value</td>
-                    </tr>
-                    {this.props.features.map(
-                        tr => {
+                    <thead>
+                        <tr style={{ backgroundColor: 'lightblue' }}>
+                            <td>id</td>
+                            <td>value</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {_.map(this.props.features, function (tr) {
                             return (
-                                <tr>
+                                <tr key={'tr_id_' + tr.id}>
                                     <td>{tr.id}</td>
                                     <td>{tr.value}</td>
                                 </tr>
                             )
                         }
-                    )}
+                        )}
+                    </tbody>
+
                 </table>
             </div>
         );
