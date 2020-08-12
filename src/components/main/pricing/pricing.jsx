@@ -9,7 +9,7 @@ export default class Princing extends Component {
     }
 
     render() {
-        document.title='Princing';
-        return(<div>Princing</div>)
+        document.title='TableX charts | princing';
+        return(<div className="princing">Princing</div>)
     }
 }
