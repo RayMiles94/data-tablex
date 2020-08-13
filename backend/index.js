@@ -1,5 +1,5 @@
 const express = require('express');
-let application = express();
+const application = express();
 const bodyparser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
