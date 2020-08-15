@@ -24,7 +24,7 @@ export default class Features extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {_.map(this.props.features, function (tr) {
+                        { _.map(this.props.features, function (tr) {
                             return (
                                 <tr key={'tr_id_' + tr.id}>
                                     <td>{tr.id}</td>
