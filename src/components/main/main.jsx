@@ -6,12 +6,11 @@ export default class MainComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
     }
 
     render() {
-        document.title='Home';
+        document.title='TableX charts | Home';
         return(
             <div id="main">{ this.props.message }</div>
         );

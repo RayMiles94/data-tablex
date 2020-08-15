@@ -7,7 +7,7 @@ export default class Features extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: 'Features'
+            name: 'TableX charts | features'
         };
     }
 
