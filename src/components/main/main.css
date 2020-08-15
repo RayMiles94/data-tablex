@@ -2,3 +2,9 @@
     min-height: 800px;
     background-color: lightslategray;
 }
+
+.darkform {
+    width: 400px;
+    background-color: lightblue;
+    padding: 10px;
+}

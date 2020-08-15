@@ -58,9 +58,25 @@ export default class MainComponent extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className="row">
+                        <form id="contact" className="form darkform">
+                            <div className="form-group">
+                                <label htmlFor="E-MAIL">E-MAIl</label>
+                                <input type="text" id="mail" className="form-control" name="mail" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="subject">Subject</label>
+                                <input type="text" id="subject" className="form-control" name="subject" />
+                            </div>
+                            <div className="form-group">
+                                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                            </div>
+                            <input type="submit" value="Send" className="btn btn-success" />
+                            <input type="button" value="close" className="btn btn-danger"/>
+                        </form>
+                    </div>
                 </div>
             </div>
-
         );
     }
 
