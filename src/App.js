@@ -8,6 +8,7 @@ import MainComponent from './components/main/main.jsx';
 import Features from './components/main/features/features';
 import Princing from './components/main/pricing/pricing';
 import NotFound from './components/404/404';
+import DashBoard from './components/Dashboard/dashboard';
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
           <Route path='/' exact    ><MainComponent message={this.state.message} /></Route>
           <Route path='/features'  ><Features features={this.state.features}  /></Route>
           <Route path='/pricing'   ><Princing /></Route>
+          <Route path='/dashbaord' ><DashBoard /></Route>
           <Route path='*'   ><NotFound /></Route>
         </Switch>
         <Footer/>
