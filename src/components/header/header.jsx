@@ -32,6 +32,9 @@ export default class Header extends Component {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/pricing">Pricing</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/dashbaord">Dashbaord</Link>
+                            </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
                             <input id="search" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
