@@ -1,6 +1,8 @@
 {
   "name": "tablesx",
   "version": "0.1.0",
+  "author": "RayMiles94",
+  "repository": "https://github.com/RayMiles94/data-tablex",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -14,11 +16,15 @@
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
     "react-router": "^5.2.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "react-router-native": "^5.2.0",
     "react-scripts": "^3.4.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "rxjs": "^6.6.2",
     "underscore": "^1.10.2"
   },
   "scripts": {
