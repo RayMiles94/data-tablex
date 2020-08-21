@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './main.css';
+import { Link } from "react-router-dom";
 
 export default class MainComponent extends Component {
 
@@ -59,21 +60,16 @@ export default class MainComponent extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <form id="contact" className="form darkform">
-                            <div className="form-group">
-                                <label htmlFor="E-MAIL">E-MAIl</label>
-                                <input type="text" id="mail" className="form-control" name="mail" />
+                        <div className="card card-image" style={{  backgroundImage: "url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)" }}>
+                            <div className="text-dark text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                <div>
+                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i> Marketing</h5>
+                                    <h3 className="card-title pt-2"><strong>This is the card title</strong></h3>
+                                    <p>Dynmaic charts application.</p>
+                                    <Link className="btn btn-pink" href="/"><i className="far fa-clone left"></i> View project</Link>
+                                </div>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="subject">Subject</label>
-                                <input type="text" id="subject" className="form-control" name="subject" />
-                            </div>
-                            <div className="form-group">
-                                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-                            </div>
-                            <input type="submit" value="Send" className="btn btn-success" />
-                            <input type="button" value="close" className="btn btn-danger"/>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
