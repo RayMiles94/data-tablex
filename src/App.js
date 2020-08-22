@@ -10,7 +10,22 @@ import Princing from './components/main/pricing/pricing';
 import NotFound from './components/404/404';
 import DashBoard from './components/Dashboard/dashboard';
 
+// import httpclient
+import axios from 'axios';
+
 class App extends Component {
+
+  componentWillMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos/1').then(
+      data => {
+        console.log(data);
+      }
+    ).catch(
+      error => {
+        console.log(error);
+      }
+    )
+  }
 
 
   constructor(props) {

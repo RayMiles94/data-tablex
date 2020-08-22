@@ -66,7 +66,7 @@ export default class MainComponent extends Component {
                                     <h5 className="pink-text"><i className="fas fa-chart-pie"></i> Marketing</h5>
                                     <h3 className="card-title pt-2"><strong>This is the card title</strong></h3>
                                     <p>Dynmaic charts application.</p>
-                                    <Link className="btn btn-pink" href="/"><i className="far fa-clone left"></i> View project</Link>
+                                    <Link className="btn btn-pink" to="/"><i className="far fa-clone left"></i> View project</Link>
                                 </div>
                             </div>
                         </div>
