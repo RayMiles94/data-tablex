@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import './main.css';
 import { Link } from "react-router-dom";
 
+
+const styles = {
+    nodestyle : {
+        backgroundImage: 'url(' + require('./images/tech/nodejs.png') + ')',
+        backgroundRepeat: 'repeat-y'
+    },
+    mongostyle: {
+        backgroundImage: 'url(' + require('./images/tech/mongo.png') + ')',
+        backgroundRepeat: 'repeat-x'
+    },
+    graphimage : {
+        backgroundImage: 'url(' + require('./images/tech/graphql.png') + ')',
+        backgroundRepeat: 'repeat-y'
+    }
+}
+
 export default class MainComponent extends Component {
 
     constructor(props) {
@@ -38,34 +54,63 @@ export default class MainComponent extends Component {
                         <span className="sr-only">Next</span>
                     </a>
                 </div>
-                <div className="container">
-                    <div className="row">
+                <div  className="container">
+                    <div id="FirstSection" className="row">
                         <div className="card" style={{ width: '18rem' }} >
-                            <img className="card-img-top" src={require('./images/cards/bi.jpg')} alt="Card1p" />
+                            <img className="card-img-top" src={require('./images/cards/bi.jpg')} alt="Card1p"  width="150" height="300"/>
                             <div className="card-body">
                                 <p className="card-text">BI.</p>
                             </div>
                         </div>
                         <div className="card" style={{ width: '18rem' }} >
-                            <img className="card-img-top" src={require('./images/cards/data_integration.jpg')} alt="Card2" />
+                            <img className="card-img-top" src={require('./images/cards/data_integration.jpg')} alt="Card2" width="150" height="300" />
                             <div className="card-body">
                                 <p className="card-text">Data integration.</p>
                             </div>
                         </div>
                         <div className="card" style={{ width: '18rem' }} >
-                            <img className="card-img-top" src={require('./images/cards/database.png')} alt="Card3" />
+                            <img className="card-img-top" src={require('./images/cards/database.png')} alt="Card3" width="150" height="300" />
                             <div className="card-body">
                                 <p className="card-text">Database.</p>
                             </div>
                         </div>
+                        <div className="card" style={{ width: '18rem' }} >
+                            <img className="card-img-top" src={require('./images/programming.jpeg')} alt="Card3" width="150" height="300" />
+                            <div className="card-body">
+                                <p className="card-text">Programming.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className="row">
-                        <div className="card card-image" style={{  backgroundImage: "url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)" }}>
+                    <div id="SecondSection" className="row">
+                        <div className="row" >
+                            <h1>Our Technology</h1>
+                        </div>
+                        <div  className="card card-image" style={styles.nodestyle}>
                             <div className="text-dark text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                                 <div>
-                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i> Marketing</h5>
-                                    <h3 className="card-title pt-2"><strong>This is the card title</strong></h3>
-                                    <p>Dynmaic charts application.</p>
+                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i>Javascript engine</h5>
+                                    <h3 className="card-title pt-2"><strong>NodeJS</strong></h3>
+                                    <p>is javascript server-side.</p>
+                                    <a className="btn btn-pink" href="https://nodejs.org/en/"><i className="far fa-clone left"></i> View project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div  className="card card-image" style={styles.mongostyle}>
+                            <div className="text-dark text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                <div>
+                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i> Database</h5>
+                                    <h3 className="card-title pt-2"><strong>JSON database</strong></h3>
+                                    <p>MongoDB.</p>
+                                    <Link className="btn btn-pink" to="/"><i className="far fa-clone left"></i> View project</Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div  className="card card-image"  style={styles.graphimage}>
+                            <div className="text-dark text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                <div>
+                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i> GRAPHQL</h5>
+                                    <h3 className="card-title pt-2"><strong>one single end  point API</strong></h3>
+                                    <p>.</p>
                                     <Link className="btn btn-pink" to="/"><i className="far fa-clone left"></i> View project</Link>
                                 </div>
                             </div>
