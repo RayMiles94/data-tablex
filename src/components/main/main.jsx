@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './main.css';
 import { Link } from "react-router-dom";
+import $ from 'jquery';
 
 
 const styles = {
@@ -26,6 +27,16 @@ export default class MainComponent extends Component {
         }
     }
 
+    componentWillMount() {
+        $(document).ready(function () {
+            $("#card_1").fadeIn(3000);
+            $("#card_2").fadeIn(5000);
+            $("#card_3").fadeIn(6000);
+            $("#card_4").fadeIn(7000);
+            $('#SecondSection').slideDown(3000);
+        });
+    }
+
     render() {
         document.title = 'TableX charts | Home';
         return (
@@ -33,16 +44,16 @@ export default class MainComponent extends Component {
                 <div id="SideShowImages" className="carousel slide" data-ride="carousel" >
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src={require('./images/side1.jpg')} alt="First slide" />
+                            <img className="d-block w-100" src={require('./images/side1.jpg')} alt="First slide" height="600" width="100%"/>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('./images/side2.jpg')} alt="Second slide" />
+                            <img className="d-block w-100" src={require('./images/side2.jpg')} alt="Second slide" height="600" width="100%" />
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('./images/side4.jpg')} alt="Third slide" />
+                            <img className="d-block w-100" src={require('./images/side4.jpg')} alt="Third slide" height="600" width="100%" />
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src={require('./images/side5.jpg')} alt="Third slide" />
+                            <img className="d-block w-100" src={require('./images/side5.jpg')} alt="Third slide" height="600" width="100%" />
                         </div>
                     </div>
                     <a className="carousel-control-prev" href="#SideShowImages" role="button" data-slide="prev">
@@ -56,32 +67,32 @@ export default class MainComponent extends Component {
                 </div>
                 <div  className="container">
                     <div id="FirstSection" className="row">
-                        <div className="card" style={{ width: '18rem' }} >
+                        <div id="card_1" className="card" style={{ width: '18rem' , display:'none' }} >
                             <img className="card-img-top" src={require('./images/cards/bi.jpg')} alt="Card1p"  width="150" height="300"/>
                             <div className="card-body">
                                 <p className="card-text">BI.</p>
                             </div>
                         </div>
-                        <div className="card" style={{ width: '18rem' }} >
+                        <div id="card_2" className="card" style={{ width: '18rem' , display:'none'}} >
                             <img className="card-img-top" src={require('./images/cards/data_integration.jpg')} alt="Card2" width="150" height="300" />
                             <div className="card-body">
                                 <p className="card-text">Data integration.</p>
                             </div>
                         </div>
-                        <div className="card" style={{ width: '18rem' }} >
+                        <div id="card_3" className="card" style={{ width: '18rem' , display:'none' }} >
                             <img className="card-img-top" src={require('./images/cards/database.png')} alt="Card3" width="150" height="300" />
                             <div className="card-body">
                                 <p className="card-text">Database.</p>
                             </div>
                         </div>
-                        <div className="card" style={{ width: '18rem' }} >
+                        <div id="card_4" className="card" style={{ width: '18rem' , display:'none' }} >
                             <img className="card-img-top" src={require('./images/programming.jpeg')} alt="Card3" width="150" height="300" />
                             <div className="card-body">
                                 <p className="card-text">Programming.</p>
                             </div>
                         </div>
                     </div>
-                    <div id="SecondSection" className="row">
+                    <div id="SecondSection" className="row" style={{ display: 'none' }}>
                         <div className="row" >
                             <h1>Our Technology</h1>
                         </div>
@@ -109,7 +120,7 @@ export default class MainComponent extends Component {
                             <div className="text-dark text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                                 <div>
                                     <h5 className="pink-text"><i className="fas fa-chart-pie"></i> GRAPHQL</h5>
-                                    <h3 className="card-title pt-2"><strong>one single end  point API</strong></h3>
+                                    <h3 className="card-title pt-2"><strong>One single end  point API</strong></h3>
                                     <p>.</p>
                                     <Link className="btn btn-pink" to="/"><i className="far fa-clone left"></i> View project</Link>
                                 </div>
