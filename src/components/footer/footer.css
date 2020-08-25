@@ -1,3 +1,7 @@
 .page-footer {
-    background-color: lightblue;
+    background-color: rgb(9, 16, 117);
+}
+
+ .py-3 {
+    color: white !important;
 }

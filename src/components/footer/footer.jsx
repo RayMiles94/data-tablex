@@ -11,7 +11,7 @@ export default class Footer extends Component {
     return (
       <footer className="page-footer font-small blue">
         <div className="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="/"> simpleapp.com</a>
+            <a href="/" style={{ color: 'white' }}> simpleapp.com</a>
         </div>
       </footer>
 

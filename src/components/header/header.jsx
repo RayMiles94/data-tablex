@@ -27,7 +27,7 @@ export default class Header extends Component {
                                 <Link className="nav-link"  to="/">Home <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/features">Features</Link>
+                                <Link className="nav-link" to="/features" >Features</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/pricing">Pricing</Link>
