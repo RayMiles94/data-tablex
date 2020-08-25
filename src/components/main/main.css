@@ -17,16 +17,31 @@
     margin: 10px !important;
 }
 
-.container > #FirstSection {
-    background-color: #2A3335 ;
+.container>#FirstSection {
+    background-color: #2A3335;
     padding: 10;
     margin: 0;
 }
 
-
-.container > #SecondSection {
-    background-color: #BCC0C1 ;
+.container>#SecondSection {
+    background-color: #BCC0C1;
     padding: 10;
     margin: 0;
 }
 
+.container>#ThirdSection {
+    background-color: #2A3335;
+    padding: 10;
+    margin: 0;
+}
+
+.text-container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-content {
+    color: white !important;
+}

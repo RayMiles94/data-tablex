@@ -34,6 +34,7 @@ export default class MainComponent extends Component {
             $("#card_3").fadeIn(6000);
             $("#card_4").fadeIn(7000);
             $('#SecondSection').slideDown(3000);
+            $('#ThirdSection').slideDown(3500);
         });
     }
 
@@ -101,7 +102,7 @@ export default class MainComponent extends Component {
                                 <div>
                                     <h5 className="pink-text"><i className="fas fa-chart-pie"></i>Javascript engine</h5>
                                     <h3 className="card-title pt-2"><strong>NodeJS</strong></h3>
-                                    <p>is javascript server-side.</p>
+                                    <p>javascript server-side.</p>
                                     <a className="btn btn-pink" href="https://nodejs.org/en/"><i className="far fa-clone left"></i> View project</a>
                                 </div>
                             </div>
@@ -119,12 +120,17 @@ export default class MainComponent extends Component {
                         <div  className="card card-image"  style={styles.graphimage}>
                             <div className="text-dark text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                                 <div>
-                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i> GRAPHQL</h5>
-                                    <h3 className="card-title pt-2"><strong>One single end  point API</strong></h3>
-                                    <p>.</p>
+                                    <h5 className="pink-text"><i className="fas fa-chart-pie"></i> GraphQL</h5>
+                                    <h3 className="card-title pt-2"><strong>Single end-point</strong></h3>
+                                    <p>Modern API</p>
                                     <Link className="btn btn-pink" to="/"><i className="far fa-clone left"></i> View project</Link>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div id="ThirdSection" className="row" style={{ display: 'none' }}>
+                        <div className="text-container">
+                                <div className="text-content">hello</div>
                         </div>
                     </div>
                 </div>
