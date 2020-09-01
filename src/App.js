@@ -13,20 +13,16 @@ import DashBoard from './components/Dashboard/dashboard';
 // import httpclient
 import axios from 'axios';
 
+const LoadingSpinner = () => (
+  <div  className="lds-ring container-text" style={{ margin:'0 auto' }} >
+    <div className="square" ></div>
+    <div className="square" ></div>
+    <div className="square" ></div>
+    <div className="square" ></div>
+  </div>
+);
+
 class App extends Component {
-
-  componentWillMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos/1').then(
-      data => {
-        console.log(data);
-      }
-    ).catch(
-      error => {
-        console.log(error);
-      }
-    )
-  }
-
 
   constructor(props) {
     super(props);
@@ -38,24 +34,52 @@ class App extends Component {
         { id:'3', value: 'value 3'  },
         { id:'4', value: 'value 4'  },
         { id:'5', value: 'value 5'  },
-      ]
+      ], 
+      loading: false
     };
   }
 
-  render() {
-    return (
-      <Router>
-        <Header/>
-        <Switch>
-          <Route path='/' exact    ><MainComponent message={this.state.message} /></Route>
-          <Route path='/features'  ><Features features={this.state.features}  /></Route>
-          <Route path='/pricing'   ><Princing /></Route>
-          <Route path='/dashbaord' ><DashBoard /></Route>
-          <Route path='*'   ><NotFound /></Route>
-        </Switch>
-        <Footer/>
-      </Router>
+  componentWillMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos/1').then(
+      data => {
+        console.log(data);
+      }
+    ).catch(
+      error => {
+        console.log(error);
+      }
     );
+    setTimeout(() => {
+      const current = this.state;
+      current.loading = true;
+      this.setState(current);
+    }, 3000);
+  }
+
+
+  
+
+  render() {
+
+    if(this.state.loading) {
+      return (
+        <Router>
+          <Header/>
+          <Switch>
+            <Route path='/' exact    ><MainComponent message={this.state.message} /></Route>
+            <Route path='/features'  ><Features features={this.state.features}  /></Route>
+            <Route path='/pricing'   ><Princing /></Route>
+            <Route path='/dashbaord' ><DashBoard /></Route>
+            <Route path='*'   ><NotFound /></Route>
+          </Switch>
+          <Footer/>
+        </Router>
+      );
+    }
+    else {
+      return(<LoadingSpinner />);
+    }
+    
   }
  
 }
