@@ -140,6 +140,7 @@ export default class DashBoard extends Component {
     }
 
     render() {
+        document.title='TableX charts | dashboard';
         return (
             <div className="container">
                 <div className="row">
