@@ -27,7 +27,7 @@ export default class MainComponent extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         $(document).ready(function () {
             $("#card_1").fadeIn(3000);
             $("#card_2").fadeIn(5000);

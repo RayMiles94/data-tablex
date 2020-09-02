@@ -11,6 +11,7 @@ import NotFound from './components/404/404';
 import DashBoard from './components/Dashboard/dashboard';
 
 // import httpclient
+// eslint-disable-next-line
 import axios from 'axios';
 
 const LoadingSpinner = () => (
@@ -40,15 +41,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos/1').then(
-      data => {
-        console.log(data);
-      }
-    ).catch(
-      error => {
-        console.log(error);
-      }
-    );
     setTimeout(() => {
       const current = this.state;
       current.loading = true;
@@ -56,13 +48,10 @@ class App extends Component {
     }, 3000);
   }
 
-
-  
-
   render() {
 
-    if(this.state.loading) {
-      return (
+    return this.state.loading ?
+      (
         <Router>
           <Header/>
           <Switch>
@@ -74,12 +63,7 @@ class App extends Component {
           </Switch>
           <Footer/>
         </Router>
-      );
-    }
-    else {
-      return(<LoadingSpinner />);
-    }
-    
+      ) : (<LoadingSpinner />);
   }
  
 }
