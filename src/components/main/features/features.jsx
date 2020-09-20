@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import './features.css';
 import _ from 'underscore';
 
+function data() {
+
+    return (
+    <div>data</div>
+    );
+    
+}
+
+
 export default class Features extends Component {
 
     constructor(props) {
@@ -36,6 +45,7 @@ export default class Features extends Component {
                     </tbody>
 
                 </table>
+                {data()}
             </div>
         );
     }
