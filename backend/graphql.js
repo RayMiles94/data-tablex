@@ -1,4 +1,9 @@
-let server = [];
+let server = [
+    {
+        id: 10,
+        
+    }
+];
 
 const { buildSchema } = require('graphql'); 
   
