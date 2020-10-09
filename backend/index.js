@@ -15,7 +15,6 @@ const { buildSchema } = require('graphql');
 
 // root resolever for graphQL
 var servers = require('./graphql.js');
-servers.init();
 
 
 
