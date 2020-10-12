@@ -17,7 +17,7 @@ const { buildSchema } = require('graphql');
 var servers = require('./graphql.js');
 
 
-
+application.use(cors());
 application.use('/graphql', express_graphql.graphqlHTTP({
   schema: servers.schema, 
   rootValue: servers.root,
@@ -28,7 +28,7 @@ application.use('/graphql', express_graphql.graphqlHTTP({
 
 application.use(bodyparser.json());
 application.use(helmet());
-application.use(cors());
+
 application.use(morgan());
 
 application.get('/', function (req, res) {

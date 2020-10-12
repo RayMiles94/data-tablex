@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
+import axios from 'axios';
 import "./pricing.css";
 
 export default function Princing() {
 
     const [price, setprice] = useState({
-        prices: [
-            {
-                name: 'server1',
-                price: '10$'
+        prices: []
+    });
+
+    useEffect(() => {
+        const fetchdata = async() => axios({
+            method: 'post',
+            url: 'http://localhost:3500/graphql',
+            headers: {
+                'Content-Type': 'application/graphql'
             },
-            {
-                name: 'server2',
-                price: '10$'
-            },
-            {
-                name: 'server3',
-                price: '20$'
-            },
-            {
-                name: 'server4',
-                price: '30$'
-            }
-        ]
-    })
+            data: 'query { servers(type: "A") { name, price } }\n\n'
+        }).then( response  => {
+                setprice({
+                    prices: response.data.data.servers
+                })
+        }).catch( error => {
+                console.log(error);
+        });
+        fetchdata();
+    }, []);
+    
 
     document.title = 'TableX charts | princing';
     return (
@@ -35,20 +38,24 @@ export default function Princing() {
             <div className="row">
                 <div className="col-12">
                     <table className="table table-sm">
-                        <tr>
-                            <td>Server</td>
-                            <td>Price</td>
-                        </tr>
-                        {
-                            price.prices.map(  e => {
-                                return (
-                                    <tr id={e.name}>
-                                        <td>{e.name}</td>
-                                        <td>{e.price} </td>
-                                    </tr>
-                                );
-                            })
-                        }
+                        <thead>
+                            <tr>
+                                <th>Server</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                price.prices.map(e => {
+                                    return (
+                                        <tr key={e.name}>
+                                            <td>{e.name}</td>
+                                            <td>{e.price} </td>
+                                        </tr>
+                                    );
+                                })
+                            }
+                        </tbody>
                     </table>
                 </div>
             </div>

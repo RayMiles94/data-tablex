@@ -3,6 +3,7 @@ let server = [
         id: 0,
         name: '0',
         description: 'description0',
+        price: '10$',
         author: '0',
         type: 'A'
     },
@@ -10,6 +11,7 @@ let server = [
         id: 1,
         name: '1',
         description: 'description1',
+        price: '20$',
         author: '1',
         type: 'B'
     },
@@ -17,6 +19,7 @@ let server = [
         id: 2,
         name: '2',
         description: 'description2',
+        price: '25$',
         author: '2',
         type: 'A'
     },
@@ -24,6 +27,7 @@ let server = [
         id: 3,
         name: '3',
         description: 'description3',
+        price: '30$',
         author: '3',
         type: 'B'
     },
@@ -31,6 +35,7 @@ let server = [
         id: 4,
         name: '4',
         description: 'description4',
+        price: '4521$',
         author: '4',
         type: 'A'
     },
@@ -38,6 +43,7 @@ let server = [
         id: 5,
         name: '5',
         description: 'description5',
+        price: '1000$',
         author: '5',
         type: 'B'
     },
@@ -45,6 +51,7 @@ let server = [
         id: 6,
         name: '6',
         description: 'description6',
+        price: '60$',
         author: '6',
         type: 'A'
     },
@@ -52,6 +59,7 @@ let server = [
         id: 7,
         name: '7',
         description: 'description7',
+        price: '90$',
         author: '7',
         type: 'B'
     },
@@ -59,6 +67,7 @@ let server = [
         id: 8,
         name: '8',
         description: 'description8',
+        price: '874$',
         author: '8',
         type: 'A'
     },
@@ -67,12 +76,14 @@ let server = [
         name: '9',
         description: 'description9',
         author: '9',
+        price: '4521$',
         type: 'B'
     },
     {
         id: 10,
         name: '10',
         description: 'CCCC',
+        price: '4521$',
         author: '9',
         type: 'C'
     }
@@ -116,7 +127,13 @@ function getServer(args) {
 function getServers(args) {
     let type = args.type;
     return server.filter(s => s.type == type);
+}
 
+function getbackend(args) {
+    let message = args.name;
+    return {
+        message: message
+    }
 }
 
 // defintion of graphql schema
@@ -124,19 +141,25 @@ let shema = buildSchema(`
     type Query {
         server(id: Int!): Server
         servers(type: String): [Server]
+        backend(name: String): Message
     },
     type Server {
         id: Int
         name: String
         description: String
+        price: String
         type: String
+    }
+    type Message {
+        message: String
     }
 `);
 
 
 let root = {
     server: getServer,
-    servers: getServers
+    servers: getServers,
+    backend: getbackend
 };
 
 module.exports = {
